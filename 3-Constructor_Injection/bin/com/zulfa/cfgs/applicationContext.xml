@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+     <!-- Dependent class configuration -->
+        <bean  id="dt" class="java.util.Date"/>
+     <!-- Dependent class configuration -->
+        <bean  id="dtdc_service" class="com.zulfa.beans.DTDC_Courier_Service"/>
+        
+        <!-- Target class configuration -->
+      <bean  id="fpkt" class="com.zulfa.beans.Flipkart">
+      
+      <constructor-arg name="dtdc"  ref="dtdc_service"/>
+      <constructor-arg name="date" ref="dt"/>
+      
+      </bean>
+     
+        
+        
+        
+        </beans>
+        

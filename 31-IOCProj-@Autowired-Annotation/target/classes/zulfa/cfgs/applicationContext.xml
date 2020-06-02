@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!--  java.util.Date class spring bean Cfg-->
+<bean  id="dob" class="java.util.Date" >
+<property name="year" value="90"></property>
+<property name="month" value="11"></property>
+<property name="date" value="20"></property>
+</bean>
+
+<bean id="dos" class="java.util.Calendar" factory-method="getInstance"/>
+
+<!--  Course class spring bean Cfg-->
+<bean id="course" class="zulfa.beans.Course" >
+<property name="courseid" value="1001"></property>
+<property name="courseName" value="java"></property>
+</bean>
+
+<!--  Student class spring bean Cfg-->
+<bean id="st" class="zulfa.beans.Student">
+<property name="sno" value="111"></property>
+<property name="sname" value="ali"></property>
+</bean>
+
+<context:annotation-config/>
+</beans>

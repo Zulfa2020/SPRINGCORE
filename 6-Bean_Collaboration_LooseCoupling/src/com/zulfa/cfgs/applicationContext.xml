@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- dependent classes cfgs --> 
+<bean id="gpay" class="com.zulfa.beans.GooglePay"/>
+<bean id="phonpe"  class="com.zulfa.beans.PhonePe"/>
+<bean id="paytm" class="com.zulfa.beans.PayTm"/>
+
+<!-- target class cfgs -->
+<bean id="fpkt" class="com.zulfa.beans.Flipkart">
+<!-- setter Injection -->
+<property name="pay" ref="gpay"/>
+</bean>
+
+</beans>

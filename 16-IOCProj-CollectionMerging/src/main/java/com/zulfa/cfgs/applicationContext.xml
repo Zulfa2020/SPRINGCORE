@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Spring bean cfg    -->
+<bean id="bfy" class="com.zulfa.beans.EnggCourse" abstract="true">
+<property name="subjects">
+<list>
+<value>M1</value>
+<value>Physics</value>
+<value>ED</value>
+<value>Chemistry</value>
+</list>
+</property>
+</bean>
+
+
+<!--   List Collection cfg -->  
+<bean id="csy" class="com.zulfa.beans.EnggCourse" parent="bfy">
+<property name="subjects">
+<list merge="true" >
+<value>Java</value>
+<value>Python</value>
+</list>
+</property>
+</bean>
+
+<bean id="ecy" class="com.zulfa.beans.EnggCourse" parent="bfy"> 
+<property name="subjects">
+<list merge="true" >
+<value>C</value>
+<value>OS</value>
+<value>FIT</value>
+</list>
+</property>
+</bean>
+</beans>

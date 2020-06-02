@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Spring bean cfg    -->
+<bean id="std" class="com.zulfa.beans.Student">
+<property name="marks">
+<array>
+<value>100</value>
+<value>90</value>
+<value>80</value>
+</array>
+</property>
+
+<property name="impDates">
+<list>
+<ref bean="sysdate" />
+<ref bean="dobdate"  />
+</list>
+</property>
+
+
+</bean>
+
+<bean id="sysdate" class="java.util.Date"/>
+<bean id="dobdate" class="java.util.Date">
+<property name="year" value="97"/>
+<property name="month" value="05"/>
+<property name="date" value="12"/>
+</bean>
+
+<!--   List Collection cfg -->  
+<bean id="clg" class="com.zulfa.beans.CollegeDetails">
+<property name="stdNames">
+<list value-type="java.lang.String">
+<value>Ali</value>
+<value>Moha</value>
+<value>Zulfa</value>
+<value>Ali</value>
+</list>
+</property>
+
+<property name="impDates">
+<list>
+<ref bean="sysdate"/>
+<ref bean="dobdate"/>
+<ref bean="sysdate"/>
+</list>
+</property>
+</bean>
+
+
+<!-- Set Collection cfg -->
+<bean id="moh" class="com.zulfa.beans.MinstryOfHR">
+<property name="aadharNo">
+<set value-type="java.lang.Long">
+<value>5454545454</value>
+<value>4545454545</value>
+<value>5454545454</value>
+<value>4545454545</value>
+</set>
+</property>
+<property name="impDates">
+<set value-type="java.util.Date">
+<ref bean="sysdate"/>
+<ref bean="dobdate"/>
+<ref bean="sysdate"/>
+</set>
+</property>
+</bean>
+
+<!-- Map Collection cfg -->
+<bean id="profile" class="com.zulfa.beans.PersonProfile">
+<property name="phones">
+<map>
+<entry key="Personal" value="999999999"/>
+<entry key="Office" value="7777777777"/>
+</map>
+</property>
+<property name="impDates">
+<map>
+<entry key="dob" value-ref="dobdate"/>
+<entry  key="SystemDate" value-ref="sysdate"/>
+<entry key="dob" value-ref="dobdate"/>
+</map>
+</property>
+<property name="bankAccounts">
+<map>
+<entry key="0798104059595" value="CANARA"/>
+<entry key="0998787765454" value="ICICI"/>
+</map>
+</property>
+</bean>
+
+<!-- Properties Collection cfg -->
+<bean id="fru" class="com.zulfa.beans.FruitStore">
+<property name="fruit">
+<props>
+<prop key="banana">yellow</prop>
+<prop key="apple">red</prop>
+<prop key="grape">black</prop>
+<prop key="orange">yellow</prop>
+</props>
+</property>
+</bean>
+</beans>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<bean id="doj" class="java.util.Date">
+<property name="year" value="115"/>
+<property name="month" value="11"/>
+<property name="date" value="12"/>
+</bean>
+
+<bean id="dob" class="java.util.Date" >
+<property name="year" value="117"/>
+<property name="month" value="06"/>
+<property name="date" value="23"/>
+ </bean>
+
+<bean id="dom" class="java.util.Date" >
+<property name="year" value="113"/>
+<property name="month" value="17"/>
+<property name="date" value="19"/>
+ </bean>
+
+<bean id="ankoprofile" class="zulfa.beans.PersonProfile">
+<constructor-arg value="2334243342"/>
+<constructor-arg value="Anko"/>
+<constructor-arg value="21.5f"/>
+<constructor-arg ref="dob"/>
+<constructor-arg ref="doj"/>
+ <constructor-arg><null/></constructor-arg>
+ </bean>
+
+<bean id="abdiprofile" class="zulfa.beans.PersonProfile">
+<constructor-arg value="233421143342"/>
+<constructor-arg value="Abdi"/>
+<constructor-arg value="23.5f"/>
+<constructor-arg ref="dob"/>
+<constructor-arg ref="doj"/>
+
+<constructor-arg><null/></constructor-arg>
+ </bean>
+
+<bean id="aliprofile" class="zulfa.beans.PersonProfile">
+<constructor-arg value="2454243342"/>
+<constructor-arg value="Ali"/>
+ <constructor-arg value="25.5f"/>
+<constructor-arg ref="dob"/>
+<constructor-arg ref="doj"/>
+<constructor-arg><null/></constructor-arg>
+ </bean>
+</beans>

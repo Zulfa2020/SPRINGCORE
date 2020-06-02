@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Autowiring by Name 
+ <bean id="tp" class="zulfa.beans.TourPlan">
+<property name="places">
+<array>
+<value>Ooty</value>
+<value>Manaali</value>
+<value>K.Canal</value>
+</array>
+</property>
+</bean> -->
+
+<!-- Autowiring by Type-->
+<bean id="tplan" class="zulfa.beans.TourPlan"  primary="true">
+<property name="places">
+<array>
+<value>Ooty</value>
+<value>Manaali</value>
+<value>K.Canal</value>
+</array>
+</property>
+</bean>
+
+<!-- <bean id="agent" class="zulfa.beans.TravelAgent" autowire="byName"/>-->
+ <bean id="agent" class="zulfa.beans.TravelAgent" autowire="byType"/>
+
+</beans>

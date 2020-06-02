@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Identifying constructor param using TYPE -->
+<bean id="st" class="com.zulfa.comps.Student">
+<constructor-arg type="int" value="101"/>
+<constructor-arg type="float"  value="98.5"/>
+<constructor-arg type="java.lang.String" value="Ali"/>
+</bean> 
+
+<!-- Identifying constructor param using INDEX -->
+<bean id="mks" class="com.zulfa.comps.Marks">
+<constructor-arg value="80" index="2"/>
+<constructor-arg value="50" index="0"/>
+<constructor-arg value="78" index="1"/>
+</bean>
+
+<!-- Identifying constructor param using NAME -->
+<bean id="crs" class="com.zulfa.comps.Course">
+<constructor-arg value="612" name="cid"/>
+<constructor-arg name="faculty" value="Nataraj"/>
+<constructor-arg name="fee" value="2000"/>
+<constructor-arg name="crsname" value="Spring"/>
+</bean>
+
+</beans>
